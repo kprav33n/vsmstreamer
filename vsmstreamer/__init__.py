@@ -370,14 +370,14 @@ def main():
     if os.path.exists(config_file):
         config = configparser.ConfigParser()
         config.read(config_file)
+        if args.profile is None:
+            args.profile = 'default'
         if args.profile not in config:
             print('Section {} not present in config file {}.'.format(
                 args.profile, config_file
             ))
             sys.exit(1)
 
-        if args.profile is None:
-            args.profile = 'default'
         cred = config[args.profile]
         if args.server is None:
             args.server = cred.get('server', None)
