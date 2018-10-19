@@ -7,6 +7,22 @@ streams on macOS.
 
 ## Requirements
 
+This utility requires the following software:
+
+  - macOS (tested on 18.0.0, Mojave)
+  - Python 2.7 or 3 (tested on 2.7.15, and 3.7)
+  - [VLC media player](https://www.videolan.org/vlc/index.html) (tested on 3.0.4 Vetinari)
+  
+These are the Python modules that the utility depends on:
+
+  - [configparser](https://pypi.org/project/configparser/)
+  - [requests](https://github.com/requests/requests.git)
+  - [PyCocoa](https://github.com/mrJean1/PyCocoa)
+  - [python-vlc](https://pypi.org/project/python-vlc/)
+  
+However, you need not install these packages by hand. Installing *vsmstreamer*
+through `pip` will automatically install these packages.
+  
 ## Installation
 
 ### From PyPI
@@ -17,6 +33,8 @@ The latest released version of *vsmstreamer* can be installed from
 ```
 pip install vsmstreamer
 ```
+
+PS: Run with `sudo` like `sudo pip install vsmstreamer` if necessary.
 
 ### From Source
 
