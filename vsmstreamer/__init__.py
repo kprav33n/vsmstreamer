@@ -361,7 +361,7 @@ def parse_args():
 def main():
     args = parse_args()
     if args.config is None:
-        config_file = os.path.expanduser('~/.vsm/credentias')
+        config_file = os.path.expanduser('~/.vsm/credentials')
         exit_without_config = False
     else:
         config_file = args.config

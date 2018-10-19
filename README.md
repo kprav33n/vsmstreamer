@@ -9,4 +9,89 @@ streams on macOS.
 
 ## Installation
 
+### From PyPI
+
+The latest released version of *vsmstreamer* can be installed from
+[PyPI](https://pypi.org/project/vsmstreamer/).
+
+```
+pip install vsmstreamer
+```
+
+### From Source
+
+The latest development version of *vstreamer* can be installed from source.
+
+```
+git clone https://github.com/kprav33n/vsmstreamer.git
+pip install -e ./vsmstreamer
+```
+
 ## Usage
+
+`vsmstreamer` is a command line utility. The following summarizes list of
+options available.
+
+```
+$ vsmstreamer --help
+usage: vsmstreamer [-h] [--config CONFIG] [--profile PROFILE]
+                   [--server SERVER] [--username USERNAME]
+                   [--password PASSWORD] [--stream STREAM]
+
+Cisco Video Surveillance Manager Streamer
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --config CONFIG, -c CONFIG
+                        path to config file
+  --profile PROFILE, -r PROFILE
+                        profile name to use
+  --server SERVER, -s SERVER
+                        VSM server address
+  --username USERNAME, -u USERNAME
+                        VSM username
+  --password PASSWORD, -p PASSWORD
+                        VSM password
+  --stream STREAM, -n STREAM
+                        stream index to display
+```
+
+In order to stream from a Cisco Video Surveillance Manager, you would need the
+following three parameters:
+
+  - server address
+  - username
+  - password
+  
+### Credentials File
+
+The above mentioned parameters can be stored in a credentials file. The default
+path of the credentials file is `~/.vsm/credentials`. However, this path can be
+overridden using the `--config` command line option. This file can contain one
+are more sections. The section name is enclosed in a square bracket like this
+`[default]`. A desired section can be selected using the `--profile` command
+line option. A sample credentials file looks like this:
+
+```
+[default]
+server = vsm.example.org
+username = jsmith
+password = $up3rsecret
+```
+
+However, use of credentials file is optional. In the absence of the credentials
+file, the command line options `--server`, `--user`, and `--password` can be
+used to specify the required parameters.
+
+### Streams
+
+*vsmstreamer* plays only one stream at a time. You can have many instances of
+this utility running at the same time if you want to want multiple streams. By
+default, this utility tunes to the first stream in the list of available
+streams. However, you can use `--stream` command line option to specify the
+stream index (0-indexed) to tune into.
+
+## Feedback
+
+If you find a bug, or you would like to see a new feature, please feel free to
+[open an issue](https://github.com/kprav33n/vsmstreamer/issues).
