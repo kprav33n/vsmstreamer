@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="vsmstreamer",
-    version="0.0.1",
+    version="0.0.3",
     author="Praveen Kumar",
     author_email="praveen+pypi@kumar.in",
     description="Cisco Video Surveillance Manager Streamer",
@@ -14,9 +14,11 @@ setuptools.setup(
     url="https://github.com/kprav33n/vsmstreamer",
     packages=setuptools.find_packages(),
     classifiers=[
+        "Development Status :: 3 - Alpha",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 2.7",
+        "Operating System :: MacOS",
         "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
     ],
     install_requires=[
         'PyCocoa',
