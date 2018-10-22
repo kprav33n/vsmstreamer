@@ -9,9 +9,13 @@ streams on macOS.
 
 This utility requires the following software:
 
-  - macOS (tested on 18.0.0, Mojave)
-  - Python 2.7 or 3 (tested on 2.7.15, and 3.7)
-  - [VLC media player](https://www.videolan.org/vlc/index.html) (tested on 3.0.4 Vetinari)
+  - macOS (tested using 18.0.0, Mojave)
+  - Python 2.7 or 3 (tested using 2.7.15, and 3.7)
+  - [VLC media player Nightly Build](https://nightlies.videolan.org/build/macosx-intel/) (tested using vlc-3.0.5-20181022-0636)
+
+**Note:** Due to a bug in VLC 3.0.4, you MUST use a nightly build of 3.0.5.
+Otherwise, the stream will stop after 120 second. For more information read
+[this thread](https://forum.videolan.org/viewtopic.php?f=12&t=146754).
   
 These are the Python modules that the utility depends on:
 
