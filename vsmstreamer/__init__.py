@@ -355,6 +355,8 @@ def parse_args():
                         help='VSM password')
     parser.add_argument('--stream', '-n', type=int, default=0,
                         help='stream index to display')
+    parser.add_argument('--list-streams', '-L', action='store_true',
+                        help='list streams and exit')
     return parser.parse_args()
 
 
@@ -410,6 +412,14 @@ def main():
     streams = {
         name: session.get_stream(uid) for name, uid in cameras.items()
     }
+
+    if args.list_streams:
+        for name, url in streams.items():
+            print('Location:', name)
+            print('URL:', url)
+            print()
+        sys.exit(0)
+
     if args.stream >= len(streams):
         print('Stream index {} is out of bounds. '
               'Only {} streams available.'.format(
