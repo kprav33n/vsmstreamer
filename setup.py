@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="vsmstreamer",
-    version="0.1.1",
+    version="0.2.0",
     author="Praveen Kumar",
     author_email="praveen+pypi@kumar.in",
     description="Cisco Video Surveillance Manager Streamer",
