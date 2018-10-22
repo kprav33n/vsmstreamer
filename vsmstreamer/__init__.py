@@ -163,7 +163,7 @@ class AppDelegate(object):
 
         self.title = title
         self.app = app
-        self.player = vlc.MediaPlayer(url)
+        self.player = vlc.Instance('--rtsp-tcp').media_player_new(uri=url)
         self.ratio = 2
         self.scale = 1
 
